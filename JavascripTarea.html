@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="TareaJavascrip.css" >
+        <meta charset="utf-8"/>
+        <title>Pagina de cambio</title>
+        <script>
+            function realizar_cambio(){
+                var num = parseFloat(document.getElementById("valor").value);
+                if(document.getElementById('valor').value == ''){
+                    alert("Porfavor coloque el valor de soles para realizar la operación")
+                }else if((isNaN(document.getElementById('valor').value))){
+                    alert("Solo colocar numeros")
+                }else{
+                    if(document.getElementById('bt1').checked){
+                            alert(num+" soles equivalen a "+(num*0.2693).toFixed(2)+" dolares")
+                    }else{
+                            alert(num+" soles equivalen a "+(num*0.2476).toFixed(2)+" euros")    
+            }}}
+        </script>
+    </head>
+    <body>
+        <h1 id="Titulo">CASA DE CAMBIO</h1>
+        <h2 class="Subtitulo">Seleccionar moneda enviar:</h2>
+        <div id="cambio">
+            <div id="a">
+                <input id="bt1" type="radio" name="eleccion" value="o"checked onclick ><p id="D">Dólar</p>
+            </div>
+            <div id="b">
+                <input id="bt2" type="radio" name="eleccion" value="o" ><p id="E">Euro</p>
+            </div>
+        </div>
+    
+            <h2 class="Subtitulo">Ingrese monto :</h2>
+            <div id="monto" ><input type="text" id="valor" /></div>
+            <div id="bt3"><button id="button" type="button" onclick="realizar_cambio()">Cotizar</button></div>
+    
+    </body>
+</html>
